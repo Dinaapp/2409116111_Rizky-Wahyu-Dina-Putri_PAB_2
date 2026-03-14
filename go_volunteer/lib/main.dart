@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'providers/app_provider.dart';
+import 'providers/theme_provider.dart';
 import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
+  await Supabase.initialize(
+    url:      dotenv.env['SUPABASE_URL']!,
+    anonKey:  dotenv.env['SUPABASE_ANON_KEY']!,
+  );
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => AppProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+      ],
       child: const GoVolunteerApp(),
     ),
   );
@@ -18,26 +31,34 @@ class GoVolunteerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = context.watch<ThemeProvider>();
     return MaterialApp(
       title: 'GoVolunteer',
       debugShowCheckedModeBanner: false,
-      // Localization untuk kalender bahasa Indonesia
+      themeMode: themeProvider.themeMode,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1565C0), brightness: Brightness.light),
+        scaffoldBackgroundColor: const Color(0xFFF0F4FF),
+        fontFamily: 'Roboto',
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1565C0), brightness: Brightness.dark),
+        scaffoldBackgroundColor: const Color(0xFF121212),
+        fontFamily: 'Roboto',
+      ),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('id', 'ID'), // Bahasa Indonesia
-        Locale('en', 'US'),
-      ],
+      supportedLocales: const [Locale('id', 'ID'), Locale('en', 'US')],
       locale: const Locale('id', 'ID'),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color (0xFF1565C0)),
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
-      home: const HomeScreen(),
+      // Cek session: sudah login → Home, belum → Login
+      home: Supabase.instance.client.auth.currentSession != null
+          ? const HomeScreen()
+          : const LoginScreen(),
     );
   }
 }
