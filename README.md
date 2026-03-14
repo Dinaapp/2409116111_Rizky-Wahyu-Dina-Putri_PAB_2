@@ -5,6 +5,7 @@
 
 ## Deskripsi
 GoVolunteer adalah aplikasi mobile berbasis Flutter yang dirancang sebagai platform promosi dan manajemen kegiatan sosial di Kota Samarinda. Aplikasi ini menjadi jembatan antara organisasi atau komunitas sosial yang ingin menyelenggarakan kegiatan sosial dengan masyarakat umum yang ingin ikut berkontribusi dalam berbagai kegiatan sosial.
+
 Aplikasi ini bertujuan untuk memberikan informasi lengkap mengenai kegiatan yang sedang berlangsung, termasuk lokasi, waktu pelaksanaan, serta manfaat atau benefit yang dapat diperoleh peserta. Selain itu, GoVolunteer memudahkan masyarakat untuk menemukan dan mengikuti kegiatan sosial dengan lebih cepat dan terorganisir. Data kegiatan dan peserta disimpan secara real-time menggunakan Supabase sebagai backend database.
 
 ## Fitur
