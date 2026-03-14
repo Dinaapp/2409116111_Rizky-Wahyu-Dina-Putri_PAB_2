@@ -108,31 +108,32 @@ Dialog popup untuk konfirmasi atau informasi. Digunakan saat hapus data, notifik
 #### 13. SnackBar
 Notifikasi singkat di bagian bawah layar. Digunakan untuk pesan sukses dan error.
 
-### Navigasi
-#### 1. Navigator.push + MaterialPageRoute
+## Navigasi
+### 1. Navigator.push + MaterialPageRoute
 Berpindah ke halaman baru. Digunakan untuk membuka detail, register, form, peserta, dan admin.
-#### 2. Navigator.pushReplacement + MaterialPageRoute
+### 2. Navigator.pushReplacement + MaterialPageRoute
 Berpindah ke halaman baru dengan mengganti halaman sebelumnya di stack. Digunakan setelah login berhasil menuju HomeScreen dan setelah logout menuju LoginScreen.
-#### 3. Navigator.pop
+### 3. Navigator.pop
 Kembali ke halaman sebelumnya. Digunakan setelah submit berhasil atau menutup dialog.
 
-### State Management (Provider)
-#### 1. StatefulWidget + setState()
+## State Management (Provider)
+### 1. StatefulWidget + setState()
 Mengelola state lokal dalam satu halaman. Digunakan untuk filter kategori, status loading, dan toggle visibilitas password.
-#### 2. ChangeNotifierProvider + MultiProvider
+### 2. ChangeNotifierProvider + MultiProvider
 Menyediakan state global ke seluruh aplikasi. Digunakan di main.dart dengan MultiProvider untuk mengelola AppProvider (data kegiatan & peserta) dan ThemeProvider (light/dark mode).
 
-### Dark Mode
-#### 1. ThemeProvider
+## Dark Mode
+### 1. ThemeProvider
 ChangeNotifier khusus untuk mengelola tema aplikasi. Menyimpan ThemeMode (light/dark) dan menyediakan fungsi toggleTheme() yang dapat dipanggil dari mana saja. Setiap perubahan tema langsung memperbarui seluruh tampilan aplikasi.
-#### 2. ThemeMode di MaterialApp
+### 2. ThemeMode di MaterialApp
 MaterialApp dikonfigurasi dengan theme (light) dan darkTheme (dark) sekaligus, serta themeMode yang dikontrol oleh ThemeProvider. Seluruh halaman secara otomatis mengikuti tema aktif.
-Supabase Integration
-#### 1. SupabaseService
+
+## Supabase Integration
+### 1. SupabaseService
 Class static yang mengelola semua komunikasi dengan Supabase, mencakup operasi CRUD pada tabel activities dan participants, serta autentikasi (register, login, logout). URL dan API Key dibaca dari file .env menggunakan flutter_dotenv agar tidak ter-push ke GitHub.
-#### 2. FutureBuilder
+### 2. FutureBuilder
 Menampilkan UI berdasarkan state async dari Future. Digunakan di halaman peserta untuk menampilkan loading indicator saat data sedang diambil dari Supabase, lalu menampilkan daftar peserta setelah data tersedia.
-#### 3. RefreshIndicator
+### 3. RefreshIndicator
 Memungkinkan pengguna melakukan pull-to-refresh. Digunakan di halaman home untuk memuat ulang data kegiatan dari Supabase.
 
 ## Dependencies
