@@ -2635,3 +2635,19 @@ class GoVolunteerApp extends StatelessWidget {
 Code main merupakan code yang menjalankan seluruh aplikasi. Sebelum aplikasi dijalankan, dilakukan dua inisialisasi: memuat file .env menggunakan flutter_dotenv untuk membaca URL dan API Key Supabase, lalu menginisialisasi koneksi Supabase. Aplikasi menggunakan MultiProvider untuk menyediakan dua provider secara global yaitu AppProvider untuk data kegiatan dan peserta, serta ThemeProvider untuk mengatur tema. Pengecekan sesi login dilakukan saat aplikasi pertama kali dibuka, jika sesi masih aktif maka langsung menuju HomeScreen, jika tidak maka menuju LoginScreen.
 
 ## Dokumentasi Aplikasi
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20120235.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20120307.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20120332.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20120955.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121018.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121032.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121237.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121247.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121317.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121345.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121359.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121420.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121435.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121513.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121539.png)
+![image alt](https://github.com/Dinaapp/2409116111_Rizky-Wahyu-Dina-Putri_PAB_2/blob/b466f5ea5be306a24f78c244512e68fc42f57717/Dokumentasi/Cuplikan%20layar%202026-03-15%20121611.png)
